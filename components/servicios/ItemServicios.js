@@ -4,7 +4,6 @@ import { Dimensions } from 'react-native';
 
 
   const ItemServicios = (servicio) => {
-    const [dimensions, setDimensions] = useState({ window, screen });
   return (
     <View style={styles.container}>
       <TouchableOpacity>

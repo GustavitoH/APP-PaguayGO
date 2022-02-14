@@ -1,12 +1,16 @@
-import React, { useState } from "react";
+import React from "react";
 import { View, Text, StyleSheet, TouchableOpacity} from 'react-native'
-import { Dimensions } from 'react-native';
+import { useNavigation } from "@react-navigation/native";
 
-  const ItemPagos = (pago) => {
-    const [dimensions, setDimensions] = useState({ window, screen });
+const ItemPagos = (pago) => {
+    const navigation = useNavigation()
+    
+    const detalle = () =>{
+      navigation.navigate ('DetallePago', {data: pago})
+    }
     return (
       <View style={styles.container}>
-        <TouchableOpacity>
+        <TouchableOpacity style={{width:'80%'}} onPress={() => detalle()}>
             <Text style={{color: '#4439cc'}}><strong>{pago.pago.cobradors[0].nombre}</strong></Text>
             <small  style={{color: '#727272', paddingTop: 5}}>Pago realizado el {pago.pago.fecha.substr(0, 10)}</small>
         </TouchableOpacity>

@@ -38,7 +38,7 @@ const Perfil = ({navigation}) => {
   }, [])
   const cerrarSesion = () => {
     localStorage.removeItem('usuario');
-    navigation.navigate('Log', {screen: 'Log'});
+    navigation.navigate('Log');
   }
   return (
     <View style={styles.container}>

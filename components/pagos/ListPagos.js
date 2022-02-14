@@ -5,7 +5,7 @@ import Toast from 'react-native-toast-message';
 import ItemPagos from './ItemPagos'
 import { getPagos } from '../../api'
 
-const ListPagos = () => {
+const ListPagos = ({navigation}) => {
   const [pagos, setPagos] = useState([]);
 
   useEffect(() => {

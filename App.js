@@ -9,6 +9,8 @@ import Pagos from './screens/Pagos'
 import Perfil from './screens/Perfil'
 import Servicios from './screens/Servicios'
 import Login from './screens/Login'
+import DetallePago from './screens/DetallePago'
+import { TouchableOpacity } from 'react-native';
 
 const Tab = createBottomTabNavigator();
 const Stack = createNativeStackNavigator();
@@ -33,22 +35,21 @@ function Tabs() {
             ? 'file-tray-stacked' 
             : 'file-tray-stacked-outline';
           }
-
           return <Ionicons name={iconName} size={size} color={color} />;
         },
         tabBarActiveTintColor: '#4439cc',
         tabBarInactiveTintColor: 'gray',
       })}>
-      <Tab.Screen name="Pagos" 
-        component={Pagos} 
+       <Tab.Screen name="Pagos" component={Detalle}
         options={{
           title: 'Pagos',
+          headerShown: false,
           headerStyle: {
             backgroundColor: '#4439cc',
           },
           headerTintColor: '#fff',
           headerTitleStyle: {
-            fontWeight: 'bold',
+            fontWeight: 'bold'        
           },
         }}
       />
@@ -96,11 +97,53 @@ function Log() {
     </Stack.Navigator>
   )
 }
+function Detalle({navigation}) {
+  const goBack = () => {
+    navigation.navigate('PagosInfo')
+  }
+  return(
+    <Stack.Navigator screenOptions={{headerShown: false}}>
+      <Tab.Screen name="PagosInfo" 
+        component={Pagos} 
+        options={{
+          title: 'Pagos',
+          headerShown: true,
+          headerStyle: {
+            backgroundColor: '#4439cc',
+          },
+          headerTintColor: '#fff',
+          headerTitleStyle: {
+            fontWeight: 'bold',
+          },
+        }}
+      />
+      <Tab.Screen name='DetallePago' 
+        component={DetallePago}
+        options={{
+          title: 'Detalle de Pago',
+          headerShown: true,
+          headerStyle: {
+            backgroundColor: '#4439cc',
+          },
+          headerTintColor: '#fff',
+          headerTitleStyle: {
+            fontWeight: 'bold',
+          },
+          headerLeft:() => (
+            <TouchableOpacity style={{paddingLeft: 10}} onPress={() => goBack()}>
+              <Ionicons name='arrow-back-outline' size='1.5rem' color='#fff' />
+          </TouchableOpacity> 
+          )
+        }}
+      />
+    </Stack.Navigator>
+  )
+}
 const App = () => {
   return (
     <NavigationContainer>
       <StackApp.Navigator initialRouteName='Log' screenOptions={{headerShown: false}}>
-        <StackApp.Screen name='Tabs' component={Tabs} />
+        <StackApp.Screen name='Tabs' component={Tabs}/>
         <StackApp.Screen name='Log' component={Log} />
       </StackApp.Navigator>
     </NavigationContainer>
