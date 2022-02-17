@@ -1,7 +1,7 @@
 import React from 'react'
 import { View, Text } from 'react-native'
 
-import ListServicios from '../components/servicios/listServicios'
+import ListServicios from '../components/servicios/ListServicios'
 
 const Servicios = () => {
   return (

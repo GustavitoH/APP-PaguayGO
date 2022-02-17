@@ -12,10 +12,10 @@ const ItemPagos = (pago) => {
       <View style={styles.container}>
         <TouchableOpacity style={{width:'80%'}} onPress={() => detalle()}>
             <Text style={{color: '#4439cc'}}><strong>{pago.pago.cobradors[0].nombre}</strong></Text>
-            <small  style={{color: '#727272', paddingTop: 5}}>Pago realizado el {pago.pago.fecha.substr(0, 10)}</small>
+            <Text  style={{color: '#727272', paddingTop: 5}}>Pago realizado el {pago.pago.fecha.substr(0, 10)}</Text>
         </TouchableOpacity>
         <TouchableOpacity style={styles.valor}>
-            <small style={{color: '#fff', padding: 3}}><strong>$ {pago.pago.total}</strong></small>
+            <Text style={{color: '#fff', padding: 3}}><strong>$ {pago.pago.total}</strong></Text>
         </TouchableOpacity>
       </View>
     )

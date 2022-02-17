@@ -40,7 +40,7 @@ const Login = ({navigation}) => {
       <Text style={{color: '#4439cc', fontSize: 15, fontWeight: '800'}}>
         Bienvenido a PaguayGO
       </Text>
-      <small style={{color: 'gray'}}>Ingresa tus credenciales</small>
+      <Text style={{color: 'gray'}}>Ingresa tus credenciales</Text>
       <TextInput 
         style={styles.inputs} 
         placeholder="Correo" 
@@ -55,7 +55,7 @@ const Login = ({navigation}) => {
       ></TextInput>
       <TouchableOpacity onPress={() => logeo()}>
         <View style={styles.button}>
-          <Text style={{color: 'white', fontSize: 15, fontWeight: 'Bold'}}>
+          <Text style={{color: 'white', fontSize: 15, fontWeight: 'bold'}}>
             Iniciar Sesión
           </Text>
         </View>

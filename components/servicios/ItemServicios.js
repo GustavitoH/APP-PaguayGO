@@ -8,8 +8,8 @@ import { Dimensions } from 'react-native';
     <View style={styles.container}>
       <TouchableOpacity>
           <Text style={{color: '#4439cc'}}><strong>{servicio.servicio.nombre}</strong></Text>
-          <small style={{color: '#727272', paddingTop: 5}}>{servicio.servicio.servicio}</small>
-          <small style={{color: '#727272', paddingTop: 5}}>servicio realizado el {servicio.servicio.direccion}</small>
+          <Text style={{color: '#727272', paddingTop: 5}}>{servicio.servicio.servicio}</Text>
+          <Text style={{color: '#727272', paddingTop: 5}}>servicio realizado el {servicio.servicio.direccion}</Text>
       </TouchableOpacity>
       <TouchableOpacity style={styles.valor}>
           <Text style={{color: '#fb7185', padding: 3}}><strong>RUC: </strong>{servicio.servicio.ruc}</Text>

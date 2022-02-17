@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API = 'http://localhost:3800/api/'
+const API = 'https://paguaygo.herokuapp.com/api/'
 
 export const getUsuario = (data) => {
   return axios.post(API + 'deudor', data);
